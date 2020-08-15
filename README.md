@@ -1,0 +1,3 @@
+# StudyNotes
+As it is, here is the place that i note what i learned...  
+Thats all, thx.
