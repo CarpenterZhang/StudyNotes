@@ -6,9 +6,7 @@
 
 __1.新建项目__
 
-![image-20200809135722482](E:\documents\note\mybatis.assets\image-20200809135722482.png)
-
-__2.依赖__
+__2.导入依赖__
 
 ```xml
 <dependency>
