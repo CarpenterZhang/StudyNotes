@@ -22,7 +22,9 @@
 
   Ctrl + Shift + Space
 
-- 
+- surround with（if/try-catch/for/lock...）
+
+  Ctrl + Alt + T
 
 ## 报错
 
