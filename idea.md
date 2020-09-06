@@ -26,6 +26,64 @@
 
   Ctrl + Alt + T
 
+## 快速输入html标签
+
+> \>：下一个子标签
+> *：多少个标签
+> $：标签的名称序号
+> {}:标签的内容
+
+```html
+<!--输入：h1,按tab键-->
+<h1></h1>
+
+<!--输入：div#abc,按Tab键-->
+<div id="abc"></div>
+ 
+<!--输入：div.abc,按Tab键-->
+<div class="abc"></div>
+ 
+<!--输入: div>p*3 ,按Tab键-->
+<div>
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+ 
+<!--输入 a[href=#] 按tab键-->
+<a href="#"></a>
+
+<!--输入：ul.menu>li*3>a[href=#]{HTML} 按tab键-->
+<ul class="menu">
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">HTML</a></li>
+</ul>
+ 
+<!--输入  ul>li*3>a[href=#]{我是第$个} 再按tab键-->
+<ul>
+    <li><a href="#">我是第1个</a></li>
+    <li><a href="#">我是第2个</a></li>
+    <li><a href="#">我是第3个</a></li>
+</ul>
+
+<!--输入 img[src='images/$.jpg']*3 再按tab键-->
+<img src="images/1.jpg" alt="">     
+<img src="images/2.jpg" alt="">     
+<img src="images/3.jpg" alt="">
+
+<!--输入 li*3>div.img>img[src='images/$.jpg'] 再按tab键-->
+<li>
+    <div class="img"><img src="images/1.jpg" alt=""></div>
+</li>
+<li>
+    <div class="img"><img src="images/2.jpg" alt=""></div>
+</li>
+<li>
+    <div class="img"><img src="images/3.jpg" alt=""></div>
+</li>
+```
+
 ## 报错
 
 1. Error:java: Compilation failed: internal java compiler error
@@ -44,7 +102,7 @@ __错误原因__
 导致这个错误的原因主要是因为jdk版本问题，此处有两个原因，一个是编译版本不匹配，一个是当前项目jdk版本不支持。
 
 - 查看项目的jdk
-  File ->Project Structure->Project Settings ->Project或使用快捷键Ctrl+Alt+shift+S打开项目的jdk配置：查看此两处是否与目标jdk一致。
+  File ->Project Structure->Project Settings ->Project(Ctrl+Alt+shift+S) 打开项目的jdk配置：查看此两处是否与目标jdk一致。
 
   ![这里写图片描述](E:\GitHub\StudyNotes\idea.assets\20180827220024648)
 
