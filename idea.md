@@ -25,6 +25,10 @@
 - surround with（if/try-catch/for/lock...）
 
   Ctrl + Alt + T
+  
+- 快速返回上次查看代码的位置
+
+  Ctrl + Alt + Left/Right
 
 ## 快速输入html标签
 
@@ -83,6 +87,12 @@
     <div class="img"><img src="images/3.jpg" alt=""></div>
 </li>
 ```
+
+## 快速输入System.out.println()及console.log()
+
+- xxxVar.sout + Tab
+- sout + Tab
+- xxxVar.log + Tab
 
 ## 报错
 
