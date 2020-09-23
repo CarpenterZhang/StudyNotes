@@ -29,6 +29,10 @@
 - 快速返回上次查看代码的位置
 
   Ctrl + Alt + Left/Right
+  
+- 关闭当前页签
+
+  Ctrl + F4
 
 ## 快速输入html标签
 
@@ -93,6 +97,20 @@
 - xxxVar.sout + Tab
 - sout + Tab
 - xxxVar.log + Tab
+
+## IDEA设置项目文件自动Add到Svn/Git
+
+1. 配置自动Add
+
+   ![image-20200923182420640](E:\GitHub\StudyNotes\idea.assets\image-20200923182420640.png)
+
+2. 将未添加的文件添加到本地
+
+   ![img](E:\GitHub\StudyNotes\idea.assets\1462681-20190526110752839-289270172.png)
+
+3. 取消已经添加的文件
+
+   ![img](E:\GitHub\StudyNotes\idea.assets\1462681-20190526110804816-1210997743.png)
 
 ## 报错
 
