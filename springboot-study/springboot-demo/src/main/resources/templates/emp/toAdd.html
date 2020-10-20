@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>toAdd</title>
+
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+<div th:replace="~{common/common::topbar}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{common/common::sidebar(act='employeeList.html')}"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+            <h2>添加员工</h2>
+            <form th:action="@{addEmp}" method="post">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="gender">性别</label>
+                    <select name="gender" class="form-control" id="gender">
+                        <option th:value="1">男</option>
+                        <option th:value="0">女</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="department">部门</label>
+                    <select name="department.id" class="form-control" id="department">
+                        <option th:each="department : ${departments}" th:value="${department.id}">
+                            [[${department.name}]]
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="birth">出生日期</label>
+                    <div class='input-group date'>
+                        <input type='text'  id='birth' name="birth" class="form-control"/>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </main>
+    </div>
+</div>
+<script th:src="@{https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js}"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js}"
+        integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ=="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#birth").flatpickr();
+    });
+</script>
+</body>
+</html>

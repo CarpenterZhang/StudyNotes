@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -10,7 +10,7 @@
     <title>index</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet"
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <style>
@@ -30,24 +30,27 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="/css/signin.css" rel="stylesheet">
+    <link th:href="@{/css/signin.css}" rel="stylesheet">
 </head>
 <body class="text-center">
-<form class="form-signin">
-    <img class="mb-4" src="/imgs/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="name" class="sr-only">Name</label>
-    <input type="text" id="name" class="form-control" placeholder="name" required="" autofocus="">
+<form class="form-signin" th:action="@{/user/login}">
+    <img class="mb-4" th:src="@{/imgs/bootstrap-solid.svg}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal" th:text="#{tip.please-sign-in}">Please sign in</h1>
+    <p style="color: red" th:if="${not #strings.isEmpty(msg)}" th:text="${msg}"></p>
+    <label for="name" class="sr-only" th:text="#{tip.name}">Name</label>
+    <input type="text" id="name" name="name" class="form-control" th:placeholder="#{tip.name}" required autofocus="">
 
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <label for="inputPassword" class="sr-only" th:text="#{tip.password}">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" th:placeholder="#{tip.password}" required>
     <div class="checkbox mb-3">
         <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" th:value="#{tip.remember-me}"> [[#{tip.remember-me}]]
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{tip.sign-in}">Sign in</button>
     <p class="mt-5 mb-3 text-muted">© 2017-2020</p>
+    <a th:href="@{/index.html(l='zh_CN')}" class="btn btn-sm">中文</a>
+    <a th:href="@{/index.html(l='en_US')}" class="btn btn-sm">English</a>
 </form>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>

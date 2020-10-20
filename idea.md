@@ -98,6 +98,20 @@
 - sout + Tab
 - xxxVar.log + Tab
 
+## idea运行时不自动编译发布文件，修改一个html都要重启
+
+1. ![image-20200924103326333](E:\GitHub\StudyNotes\idea.assets\image-20200924103326333.png)
+
+2. ctrl+alt+shift+/
+
+   ![image-20200924103440561](E:\GitHub\StudyNotes\idea.assets\image-20200924103440561.png)
+
+   1.Registry...
+
+   ![image-20200924103644313](E:\GitHub\StudyNotes\idea.assets\image-20200924103644313.png)
+
+   compiler.automake.allow.when.app.running   √
+
 ## IDEA设置项目文件自动Add到Svn/Git
 
 1. 配置自动Add
